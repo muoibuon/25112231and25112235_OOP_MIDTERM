@@ -15,7 +15,6 @@ https://25112231oopmidterm.vercel.app
 Ứng dụng native macOS quản lý hóa đơn B2B: tạo hóa đơn, quản lý khách hàng, theo dõi doanh thu, xuất VietQR thanh toán. Giao diện SwiftUI với hỗ trợ sáng/tối và song ngữ Việt/Anh.
 
   ![Swift](https://img.shields.io/badge/Language-Swift%205.9-F05138?style=flat&logo=swift&logoColor=white)
-  
   ![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-0070C9?style=flat&logo=apple&logoColor=white)                                                                                                        
   ![CoreData](https://img.shields.io/badge/Database-CoreData%20%2B%20SQLite-003B57?style=flat&logo=sqlite&logoColor=white)                                                                                
   ![macOS](https://img.shields.io/badge/Platform-macOS%2013%2B-000000?style=flat&logo=apple&logoColor=white)                                                                                              
