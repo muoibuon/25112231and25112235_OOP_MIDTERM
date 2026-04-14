@@ -2,6 +2,8 @@
   <img width="121" height="121" alt="icon" src="https://github.com/user-attachments/assets/04d8b894-6003-4821-94a5-e82281134789" />
 </p>
 
+[Truy cập nhanh ứng dụng tại đây](https://25112231oopmidterm.vercel.app)
+
 # Muoi — B2B Invoice Manager
 
 Ứng dụng native macOS quản lý hóa đơn B2B: tạo hóa đơn, quản lý khách hàng, theo dõi doanh thu, xuất VietQR thanh toán. Giao diện SwiftUI với hỗ trợ sáng/tối và song ngữ Việt/Anh.
