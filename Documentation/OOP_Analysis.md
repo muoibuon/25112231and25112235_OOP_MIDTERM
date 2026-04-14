@@ -15,16 +15,9 @@
 ---
 
 ## 1. Encapsulation — Đóng Gói
-
-### Khái Niệm
-
-> **Đóng gói** = che giấu dữ liệu bên trong, chỉ cho phép truy cập qua các phương thức được kiểm soát.
-
-**Tương tự thực tế:** ATM có tiền bên trong nhưng bạn không thể mở hộc tiền — bạn chỉ được rút qua màn hình. Tiền được *đóng gói* và *bảo vệ*.
-
 ### Áp Dụng Trong Dự Án
 
-**Ví dụ 1: Lớp **`**Invoice**`** — Đóng gói tính toán tài chính**
+** 1: Lớp **`**Invoice**`** — Đóng gói tính toán tài chính**
 
 ```
 // File: Models/Models.swift — Dòng 6-62
@@ -68,7 +61,7 @@ public class Invoice: NSManagedObject {
 
 ---
 
-**Ví dụ 2: Lớp **`**CoreDataManager**`** — Đóng gói truy cập database**
+** 2: Lớp **`**CoreDataManager**`** — Đóng gói truy cập database**
 
 ```
 // File: Services/CoreDataManager.swift — Dòng 4-25
@@ -101,13 +94,13 @@ class CoreDataManager {
 ┌─────────────────────────────────────────┐
 │              Invoice (Class)            │
 │─────────────────────────────────────────│
-│  [DỮ LIỆU BÊN TRONG - được bảo vệ]     │
+│  [DỮ LIỆU BÊN TRONG - được bảo vệ]      │
 │  - subtotal: Double                     │
 │  - paidAmount: Double                   │
 │  - totalAmount: Double                  │
 │  - dueDate: Date                        │
 │─────────────────────────────────────────│
-│  [CỬA RA VÀO ĐƯỢC KIỂM SOÁT - public]  │
+│  [CỬA RA VÀO ĐƯỢC KIỂM SOÁT - public]   │
 │  + remainingAmount → Double             │
 │  + isOverdue → Bool                     │
 │  + statusDisplay → String               │
@@ -118,16 +111,9 @@ class CoreDataManager {
 ---
 
 ## 2. Inheritance — Kế Thừa
-
-### Khái Niệm
-
-> **Kế thừa** = một lớp con *thừa hưởng* thuộc tính và hành vi từ lớp cha, đồng thời có thể thêm tính năng riêng.
-
-**Tương tự thực tế:** "Xe tải" kế thừa từ "Phương tiện" (có bánh xe, động cơ), nhưng thêm tính năng riêng (thùng hàng, tải trọng).
-
 ### Áp Dụng Trong Dự Án
 
-**Ví dụ: **`**Invoice**`** và **`**Client**`** kế thừa từ **`**NSManagedObject**`
+** 1: **`**Invoice**`** và **`**Client**`** kế thừa từ **`**NSManagedObject**`
 
 ```
 // File: Models/Models.swift
@@ -173,7 +159,7 @@ public class Client: NSManagedObject {    // ← cùng kế thừa
 }
 ```
 
-**Ví dụ 2: **`**AppDelegate**`** kế thừa từ **`**NSObject**`** và thực hiện **`**NSApplicationDelegate**`
+** 2: **`**AppDelegate**`** kế thừa từ **`**NSObject**`** và thực hiện **`**NSApplicationDelegate**`
 
 ```
 // File: App/B2BApp.swift — Dòng 66
@@ -211,12 +197,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
               ┌────────────┴────────────┐
               │                         │
     ┌─────────▼──────────┐  ┌──────────▼──────────┐
-    │      Invoice       │  │        Client        │  ← LỚP CON
+    │      Invoice       │  │        Client       │  ← LỚP CON
     │────────────────────│  │─────────────────────│
-    │ (kế thừa tất cả)  │  │ (kế thừa tất cả)   │
-    │ + invoiceNumber    │  │ + companyName        │
-    │ + totalAmount      │  │ + taxCode            │
-    │ + isOverdue        │  │ + creditLimit        │
+    │ (kế thừa tất cả)  │  │ (kế thừa tất cả)     │
+    │ + invoiceNumber    │  │ + companyName       │
+    │ + totalAmount      │  │ + taxCode           │
+    │ + isOverdue        │  │ + creditLimit       │
     └────────────────────┘  └─────────────────────┘
 
 Ký hiệu: ▲ = "kế thừa từ" (inheritance)
@@ -225,16 +211,9 @@ Ký hiệu: ▲ = "kế thừa từ" (inheritance)
 ---
 
 ## 3. Polymorphism — Đa Hình
-
-### Khái Niệm
-
-> **Đa hình** = cùng một tên phương thức nhưng hoạt động khác nhau tùy theo đối tượng.
-
-**Tương tự thực tế:** Lệnh "Kêu" — con mèo kêu "meo", con chó kêu "gâu". Cùng lệnh, khác kết quả.
-
 ### Áp Dụng Trong Dự Án
 
-**Ví dụ 1: **`**statusDisplay**`** — cùng tên, khác đối tượng**
+** 1: **`**statusDisplay**`** — cùng tên, khác đối tượng**
 
 ```
 // Cả Invoice lẫn Client đều có statusDisplay
@@ -278,7 +257,7 @@ public var statusDisplay: String {
     ─────────── Cùng tên, khác kết quả ───────────
 ```
 
-**Ví dụ 2: Đa hình qua Generic (kiểu tổng quát)**
+** 2: Đa hình qua Generic (kiểu tổng quát)**
 
 ```
 // CoreDataManager.swift — Dòng 117-132
@@ -301,7 +280,7 @@ let clients  = CoreDataManager.shared.fetchRequest(Client.self)    // Lấy khá
 //                                                  ↑ Đa hình: cùng hàm, kiểu khác nhau
 ```
 
-**Ví dụ 3: Đa hình qua Protocol **`**ObservableObject**`
+** 3: Đa hình qua Protocol **`**ObservableObject**`
 
 ```
 // Ba lớp đều tuân theo ObservableObject nhưng thông báo dữ liệu khác nhau:
@@ -325,16 +304,9 @@ class LocalizationManager: ObservableObject {
 ---
 
 ## 4. Abstraction — Trừu Tượng Hóa
-
-### Khái Niệm
-
-> **Trừu tượng hóa** = che giấu sự phức tạp, chỉ hiện ra những gì cần thiết. Định nghĩa "CÁI GÌ" mà không quan tâm "LÀM THẾ NÀO".
-
-**Tương tự thực tế:** Bạn dùng điện thoại chỉ cần biết nút gọi, nút kết thúc — không cần biết sóng radio hoạt động như thế nào.
-
 ### Áp Dụng Trong Dự Án
 
-**Ví dụ 1: Protocol **`**Identifiable**`** — Trừu tượng hóa định danh**
+** 1: Protocol **`**Identifiable**`** — Trừu tượng hóa định danh**
 
 ```
 // Models/Models.swift — dòng 38, 94
@@ -351,7 +323,7 @@ extension Client: Identifiable {}    // Client cũng vậy
 // vì Invoice/Client đều Identifiable — có id duy nhất
 ```
 
-**Ví dụ 2: **`**AppDelegate**`** tuân theo **`**NSApplicationDelegate**`
+** 2: **`**AppDelegate**`** tuân theo **`**NSApplicationDelegate**`
 
 ```
 // App/B2BApp.swift — Dòng 66
@@ -379,7 +351,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 ```
 
-**Ví dụ 3: **`**ObservableObject**`** + **`**@Published**`** — Trừu tượng hóa phản ứng UI**
+** 3: **`**ObservableObject**`** + **`**@Published**`** — Trừu tượng hóa phản ứng UI**
 
 ```
 // Services/APIService.swift — Dòng 21-28
@@ -419,13 +391,6 @@ class APIService: ObservableObject {
 ---
 
 ## 5. Mẫu Thiết Kế Singleton
-
-### Khái Niệm
-
-> **Singleton** là mẫu thiết kế đảm bảo một lớp chỉ có **đúng một đối tượng** trong toàn bộ chương trình.
-
-**Tương tự thực tế:** Một đất nước chỉ có một Chính phủ duy nhất — mọi bộ ngành đều liên hệ với Chính phủ đó, không ai tạo ra Chính phủ thứ hai.
-
 ### Áp Dụng Trong Dự Án — 3 Singleton
 
 ```
@@ -478,7 +443,7 @@ class SyncManager: ObservableObject {
   │  ──▷ = Kế thừa (Inheritance)                                           │
   │  ···▷ = Thực hiện giao thức (Realization/Abstraction)                  │
   │  ──── = Quan hệ sử dụng (Association)                                  │
-  │  ◆─── = Quan hệ chứa đựng (Composition)                               │
+  │  ◆─── = Quan hệ chứa đựng (Composition)                                │
   └─────────────────────────────────────────────────────────────────────────┘
 
          ┌───────────────────────────┐
@@ -552,13 +517,3 @@ class SyncManager: ObservableObject {
 | **Abstraction** | Ẩn phức tạp, chỉ hiện cái cần | Protocol `Identifiable`, `ObservableObject`, `NSApplicationDelegate` | Models.swift:38, 94; APIService.swift:21 |
 | **Singleton** *(mẫu thiết kế)* | 1 đối tượng duy nhất | `CoreDataManager.shared`, `APIService.shared`, `SyncManager.shared` | Tất cả Services |
 
-### Lời Khuyên Cho Sinh Viên Năm Nhất
-
-> **Bước học OOP hiệu quả:**
->
-> 1. **Bắt đầu với Encapsulation** — Hãy thực hành ẩn dữ liệu và tạo phương thức accessor
-> 2. **Học Inheritance qua ví dụ thực** — Vẽ sơ đồ cây kế thừa trước khi code
-> 3. **Polymorphism đến tự nhiên** — Khi bạn có lớp kế thừa, polymorphism xuất hiện
-> 4. **Abstraction là mục tiêu cuối** — Thiết kế interface (protocol) trước khi viết class
->
-> Dự án Muoi là ví dụ **thực tế** — mỗi nguyên lý OOP đều có lý do tồn tại để code dễ đọc, dễ sửa, ít lỗi hơn.
