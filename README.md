@@ -3,20 +3,21 @@
 Ứng dụng native macOS quản lý hóa đơn B2B: tạo hóa đơn, quản lý khách hàng, theo dõi doanh thu, xuất VietQR thanh toán. Giao diện SwiftUI với hỗ trợ sáng/tối và song ngữ Việt/Anh.
 
 ## Tính năng
-
+```
 - **Hóa đơn**: tạo, chỉnh sửa, theo dõi thanh toán, cảnh báo quá hạn, VAT & chiết khấu tự động
 - **Khách hàng**: CRUD, hạn mức tín dụng, thống kê doanh thu
 - **Dashboard**: tổng quan doanh thu, công nợ, hóa đơn quá hạn, tỷ giá ngoại tệ
 - **VietQR**: sinh mã QR chuyển khoản theo số hóa đơn
 - **Đa ngôn ngữ**: Tiếng Việt / Tiếng Anh, chuyển đổi tức thì
 - **Giao diện**: sáng/tối thích ứng, Liquid Glass
+```
 
 ## Yêu cầu
-
+```
 - macOS 13.0+
 - Xcode 15+
 - Swift 5.9+
-
+```
 ## Chạy dự án
 
 ```bash
