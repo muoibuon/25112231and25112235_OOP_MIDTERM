@@ -25,44 +25,44 @@
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                    HỆ THỐNG MUOI B2B                            │
-│                                                                  │
+│                                                                 │
 │   ┌──────────────────────────────────────────┐                  │
-│   │           QUẢN LÝ HÓA ĐƠN               │                  │
-│   │  (UC-01) Tạo hóa đơn mới                │                  │
-│   │  (UC-02) Xem danh sách hóa đơn          │                  │
-│   │  (UC-03) Chỉnh sửa hóa đơn             │                  │
-│   │  (UC-04) Xóa hóa đơn                   │                  │
-│   │  (UC-05) Tìm kiếm / Lọc hóa đơn       │                  │
-│   │  (UC-06) Ghi nhận thanh toán            │                  │
+│   │           QUẢN LÝ HÓA ĐƠN                │                  │
+│   │  (UC-01) Tạo hóa đơn mới                 │                  │
+│   │  (UC-02) Xem danh sách hóa đơn           │                  │
+│   │  (UC-03) Chỉnh sửa hóa đơn               │                  │
+│   │  (UC-04) Xóa hóa đơn                     |                  │
+│   │  (UC-05) Tìm kiếm / Lọc hóa đơn          │                  │
+│   │  (UC-06) Ghi nhận thanh toán             │                  │
 │   └──────────────────────────────────────────┘                  │
-│                                                                  │
+│                                                                 │
 │   ┌──────────────────────────────────────────┐                  │
-│   │           QUẢN LÝ KHÁCH HÀNG            │    [Người dùng]  │
-│   │  (UC-07) Thêm khách hàng               │◄───────○         │
-│   │  (UC-08) Xem danh sách khách hàng      │        │         │
-│   │  (UC-09) Chỉnh sửa thông tin KH        │        │         │
-│   │  (UC-10) Xóa khách hàng               │                  │
+│   │           QUẢN LÝ KHÁCH HÀNG             │    [Người dùng]  │
+│   │  (UC-07) Thêm khách hàng                 │◄───────○         │
+│   │  (UC-08) Xem danh sách khách hàng        │        │         │
+│   │  (UC-09) Chỉnh sửa thông tin KH          │        │         │
+│   │  (UC-10) Xóa khách hàng                  │                  │
 │   └──────────────────────────────────────────┘                  │
-│                                                                  │
+│                                                                 │
 │   ┌──────────────────────────────────────────┐                  │
-│   │           DASHBOARD & BÁO CÁO           │                  │
-│   │  (UC-11) Xem tổng quan doanh thu        │                  │
-│   │  (UC-12) Xem hóa đơn quá hạn           │                  │
-│   │  (UC-13) Xem tỷ giá ngoại tệ           │                  │
+│   │           DASHBOARD & BÁO CÁO            │                  │
+│   │  (UC-11) Xem tổng quan doanh thu         │                  │
+│   │  (UC-12) Xem hóa đơn quá hạn             │                  │
+│   │  (UC-13) Xem tỷ giá ngoại tệ             │                  │
 │   └──────────────────────────────────────────┘                  │
-│                                                                  │
+│                                                                 │
 │   ┌──────────────────────────────────────────┐                  │
-│   │           THANH TOÁN                    │    [Hệ thống     │
-│   │  (UC-14) Sinh mã QR VietQR             │◄───ngoài]        │
-│   │  (UC-15) Xem tỷ giá hối đoái          │    (API)         │
+│   │           THANH TOÁN                     │    [Hệ thống     │
+│   │  (UC-14) Sinh mã QR VietQR               │◄───ngoài]        │
+│   │  (UC-15) Xem tỷ giá hối đoái             │    (API)         │
 │   └──────────────────────────────────────────┘                  │
-│                                                                  │
+│                                                                 │
 │   ┌──────────────────────────────────────────┐                  │
-│   │           CÀI ĐẶT                       │                  │
-│   │  (UC-16) Đổi ngôn ngữ Việt/Anh         │                  │
-│   │  (UC-17) Đổi giao diện sáng/tối        │                  │
-│   │  (UC-18) Cấu hình ngân hàng VietQR     │                  │
-│   │  (UC-19) Xuất dữ liệu (JSON)           │                  │
+│   │           CÀI ĐẶT                        │                  │
+│   │  (UC-16) Đổi ngôn ngữ Việt/Anh           │                  │
+│   │  (UC-17) Đổi giao diện sáng/tối          │                  │
+│   │  (UC-18) Cấu hình ngân hàng VietQR       │                  │
+│   │  (UC-19) Xuất dữ liệu (JSON)             │                  │
 │   └──────────────────────────────────────────┘                  │
 └─────────────────────────────────────────────────────────────────┘
 
@@ -91,47 +91,47 @@ Ghi chú:
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
-│                        ỨNG DỤNG MUOI B2B (macOS)                        │
-│                                                                           │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │                        TẦNG GIAO DIỆN (Views Layer)             │    │
-│  │                                                                  │    │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐  │    │
-│  │  │  Dashboard   │  │ InvoiceViews │  │    ClientViews       │  │    │
-│  │  │  View        │  │ (List+Detail │  │ (List+Table+Sheet)   │  │    │
-│  │  │              │  │  +Sheet)     │  │                      │  │    │
-│  │  └──────┬───────┘  └──────┬───────┘  └──────────┬───────────┘  │    │
-│  │         │                 │                      │              │    │
-│  │  ┌──────┴─────────────────┴──────────────────────┴───────────┐  │    │
-│  │  │               MainWindow + MainSidebar                    │  │    │
-│  │  └────────────────────────────────────────────────────────────┘  │    │
-│  └──────────────────────────┬──────────────────────────────────────┘    │
+│                        ỨNG DỤNG MUOI B2B (macOS)                         │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐     │
+│  │                        TẦNG GIAO DIỆN (Views Layer)             │     │
+│  │                                                                 |     │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐   │     │
+│  │  │  Dashboard   │  │ InvoiceViews │  │    ClientViews       │   │     │
+│  │  │  View        │  │ (List+Detail │  │ (List+Table+Sheet)   │   │     │
+│  │  │              │  │  +Sheet)     │  │                      │   │     │
+│  │  └──────┬───────┘  └──────┬───────┘  └──────────┬───────────┘   │     │ 
+│  │         │                 │                      │              │     │
+│  │  ┌──────┴─────────────────┴──────────────────────┴───────────┐  │     │
+│  │  │               MainWindow + MainSidebar                    │  │     │
+│  │  └────────────────────────────────────────────────────────────┘ │     │
+│  └──────────────────────────┬──────────────────────────────────────┘     │         
 │                             │ sử dụng                                    │
-│  ┌──────────────────────────▼──────────────────────────────────────┐    │
-│  │                      TẦNG DỊCH VỤ (Services Layer)              │    │
-│  │                                                                  │    │
-│  │  ┌───────────────────┐  ┌──────────────┐  ┌──────────────────┐ │    │
-│  │  │  CoreDataManager  │  │  APIService  │  │   SyncManager    │ │    │
-│  │  │  (Singleton)      │  │  (Singleton) │  │   (Singleton)    │ │    │
-│  │  │  - CRUD           │  │  - Tỷ giá   │  │   - Auto sync    │ │    │
-│  │  │  - Fetch/Save     │  │  - VietQR   │  │   - Timer        │ │    │
-│  │  └────────┬──────────┘  │  - Countries│  └──────────────────┘ │    │
-│  │           │             └──────┬───────┘                       │    │
-│  └───────────┼────────────────────┼───────────────────────────────┘    │
-│              │ đọc/ghi            │ gọi API                             │
-│  ┌───────────▼──────────┐  ┌──────▼────────────────────────────────┐   │
-│  │   TẦNG DỮ LIỆU       │  │    DỊCH VỤ NGOÀI (External APIs)      │   │
-│  │   (Models Layer)     │  │                                        │   │
-│  │                      │  │  open.er-api.com  (Tỷ giá hối đoái)   │   │
-│  │  ┌────────────────┐  │  │  img.vietqr.io    (Mã QR chuyển khoản)│   │
-│  │  │   Invoice      │  │  │  restcountries.com (Danh sách quốc gia)│   │
-│  │  │ (NSManagedObj) │  │  └────────────────────────────────────────┘   │
-│  │  └────────────────┘  │                                               │
-│  │  ┌────────────────┐  │  ┌────────────────────────────────────────┐   │
-│  │  │    Client      │  │  │    TẦNG TIỆN ÍCH (Utilities)           │   │
-│  │  │ (NSManagedObj) │  │  │  Constants · Extensions                │   │
-│  │  └────────────────┘  │  │  Localization · ValidationHelper       │   │
-│  │    [CoreData SQLite] │  └────────────────────────────────────────┘   │
+│  ┌──────────────────────────▼──────────────────────────────────────┐     │
+│  │                      TẦNG DỊCH VỤ (Services Layer)              │     │
+│  │                                                                 |     │
+│  │  ┌───────────────────┐  ┌──────────────┐  ┌──────────────────┐  │     │
+│  │  │  CoreDataManager  │  │  APIService  │  │   SyncManager    │  │     │
+│  │  │  (Singleton)      │  │  (Singleton) │  │   (Singleton)    │  │     │
+│  │  │  - CRUD           │  │  - Tỷ giá    │  │   - Auto sync    │  │     │
+│  │  │  - Fetch/Save     │  │  - VietQR    │  │   - Timer        │  │     │  
+│  │  └────────┬──────────┘  │  - Countries │  └──────────────────┘  │     │
+│  │           │             └──────┬───────┘                        │     │
+│  └───────────┼────────────────────┼───────────────────────────────-┘     │
+│              │ đọc/ghi            │ gọi API                              │
+│  ┌───────────▼──────────┐  ┌──────▼────────────────────────────────┐     │
+│  │   TẦNG DỮ LIỆU       │  │    DỊCH VỤ NGOÀI (External APIs)      │     │
+│  │   (Models Layer)     │  │                                       │     │
+│  │                      │  │  open.er-api.com  (Tỷ giá hối đoái)   │     │
+│  │  ┌────────────────┐  │  │  img.vietqr.io    (Mã QR chuyển khoản)│     │
+│  │  │   Invoice      │  │  │  restcountries.com (Danh sách quốc gia)│    │
+│  │  │ (NSManagedObj) │  │  └────────────────────────────────────────┘    │
+│  │  └────────────────┘  │                                                │
+│  │  ┌────────────────┐  │  ┌────────────────────────────────────────┐    │
+│  │  │    Client      │  │  │    TẦNG TIỆN ÍCH (Utilities)           │    │
+│  │  │ (NSManagedObj) │  │  │  Constants · Extensions                │    │
+│  │  └────────────────┘  │  │  Localization · ValidationHelper       │    │
+│  │    [CoreData SQLite] │  └────────────────────────────────────────┘    │
 │  └──────────────────────┘                                                │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
@@ -246,7 +246,7 @@ Người Dùng    NewInvoiceSheet    CoreDataManager    Database (SQLite)
     │                │   totalAmount)    │                  │
     │                │───────────────────┤                  │
     │                │                   │                  │
-    │  Nhấn "Lưu"   │                   │                  │
+    │  Nhấn "Lưu"    │                   │                  │
     │────────────────►                   │                  │
     │                │  Validate()       │                  │
     │                │───────────────────┤                  │
@@ -254,7 +254,7 @@ Người Dùng    NewInvoiceSheet    CoreDataManager    Database (SQLite)
     │                │──────────────────►│                  │
     │                │                   │  context.save()  │
     │                │                   │─────────────────►│
-    │                │                   │  Thành công ✅   │
+    │                │                   │  Thành công      │
     │                │                   │◄─────────────────│
     │  Hóa đơn xuất hiện trong danh sách │                  │
     │◄───────────────│                   │                  │
@@ -267,18 +267,18 @@ Người Dùng    NewInvoiceSheet    CoreDataManager    Database (SQLite)
 
 ```
 AppDelegate    SyncManager    CoreDataManager    API Server
-    │               │                │               │
-    │  App khởi động│                │               │
-    │───────────────►               │               │
-    │               │ startAutoSync()│               │
+    │               │                │              │
+    │  App khởi động│                │              │
+    │───────────────►                │              │
+    │               │ startAutoSync()│              │
     │               │────────────────►              │
-    │               │ Tạo Timer (5 phút)             │
+    │               │ Tạo Timer (5 phút)            │
     │               │───────────────┤               │
     │               │               │               │
-    │        [Sau 5 phút — Timer kích hoạt]          │
+    │        [Sau 5 phút — Timer kích hoạt]         │
     │               │               │               │
     │               │  performSync()│               │
-    │               │───────────────►              │
+    │               │───────────────►               │
     │               │  isSyncing=true               │
     │               │───────────────┤               │
     │               │               │  POST /sync   │
@@ -308,13 +308,13 @@ AppDelegate    SyncManager    CoreDataManager    API Server
 ```
                           ┌─────────────┐
                 [Tạo mới] │             │
-          ────────────────►   NHÁP     │
+          ────────────────►   NHÁP      │
                           │  (draft)    │
                           └──────┬──────┘
                                  │ Gửi cho khách hàng
                                  ▼
                           ┌─────────────┐
-                          │   CHỜ XỬ LÝ│◄──── Có thể hoàn tác
+                          │   CHỜ XỬ LÝ │◄──── Có thể hoàn tác
                           │  (pending)  │
                           └──────┬──────┘
                                  │
@@ -324,8 +324,8 @@ AppDelegate    SyncManager    CoreDataManager    API Server
              ┌──────────┐  ┌─────────┐  ┌──────────┐
              │ ĐÃ THANH │  │ QUÁ HẠN │  │   HỦY    │
              │  TOÁN    │  │(overdue)│  │(cancelled│
-             │  (paid)  │  │ [tự động│  │          │
-             └──────────┘  │ phát hiện│  └──────────┘
+             │  (paid)  │  │tự động  │  │          │
+             └──────────┘  │phát hiện│  └──────────┘
                            └─────────┘
                                 │
                                 │ Khách thanh toán trễ
