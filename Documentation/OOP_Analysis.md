@@ -15,9 +15,10 @@
 ---
 
 ## 1. Encapsulation — Đóng Gói
+
 ### Áp Dụng Trong Dự Án
 
-** 1: Lớp **`**Invoice**`** — Đóng gói tính toán tài chính**
+1: Lớp `Invoice` — Đóng gói tính toán tài chính
 
 ```
 // File: Models/Models.swift — Dòng 6-62
@@ -57,11 +58,11 @@ public class Invoice: NSManagedObject {
 }
 ```
 
-**Lợi ích:** View chỉ cần gọi `invoice.isOverdue` — không cần biết bên trong so sánh ngày tháng như thế nào.
+Lợi ích: View chỉ cần gọi `invoice.isOverdue` — không cần biết bên trong so sánh ngày tháng như thế nào.
 
 ---
 
-** 2: Lớp **`**CoreDataManager**`** — Đóng gói truy cập database**
+2: Lớp `CoreDataManager` — Đóng gói truy cập database
 
 ```
 // File: Services/CoreDataManager.swift — Dòng 4-25
@@ -113,7 +114,7 @@ class CoreDataManager {
 ## 2. Inheritance — Kế Thừa
 ### Áp Dụng Trong Dự Án
 
-** 1: **`**Invoice**`** và **`**Client**`** kế thừa từ **`**NSManagedObject**`
+1: `Invoice` và `Client` kế thừa từ `NSManagedObject`
 
 ```
 // File: Models/Models.swift
@@ -159,7 +160,7 @@ public class Client: NSManagedObject {    // ← cùng kế thừa
 }
 ```
 
-** 2: **`**AppDelegate**`** kế thừa từ **`**NSObject**`** và thực hiện **`**NSApplicationDelegate**`
+2: `AppDelegate` kế thừa từ `NSObject` và thực hiện `NSApplicationDelegate`
 
 ```
 // File: App/B2BApp.swift — Dòng 66
@@ -213,7 +214,7 @@ Ký hiệu: ▲ = "kế thừa từ" (inheritance)
 ## 3. Polymorphism — Đa Hình
 ### Áp Dụng Trong Dự Án
 
-** 1: **`**statusDisplay**`** — cùng tên, khác đối tượng**
+1: `statusDisplay` — cùng tên, khác đối tượng
 
 ```
 // Cả Invoice lẫn Client đều có statusDisplay
@@ -257,7 +258,7 @@ public var statusDisplay: String {
     ─────────── Cùng tên, khác kết quả ───────────
 ```
 
-** 2: Đa hình qua Generic (kiểu tổng quát)**
+2: Đa hình qua Generic (kiểu tổng quát)
 
 ```
 // CoreDataManager.swift — Dòng 117-132
@@ -280,7 +281,7 @@ let clients  = CoreDataManager.shared.fetchRequest(Client.self)    // Lấy khá
 //                                                  ↑ Đa hình: cùng hàm, kiểu khác nhau
 ```
 
-** 3: Đa hình qua Protocol **`**ObservableObject**`
+3: Đa hình qua Protocol `ObservableObject`
 
 ```
 // Ba lớp đều tuân theo ObservableObject nhưng thông báo dữ liệu khác nhau:
@@ -306,7 +307,7 @@ class LocalizationManager: ObservableObject {
 ## 4. Abstraction — Trừu Tượng Hóa
 ### Áp Dụng Trong Dự Án
 
-** 1: Protocol **`**Identifiable**`** — Trừu tượng hóa định danh**
+1: Protocol `Identifiable` — Trừu tượng hóa định danh**
 
 ```
 // Models/Models.swift — dòng 38, 94
@@ -323,7 +324,7 @@ extension Client: Identifiable {}    // Client cũng vậy
 // vì Invoice/Client đều Identifiable — có id duy nhất
 ```
 
-** 2: **`**AppDelegate**`** tuân theo **`**NSApplicationDelegate**`
+2: `AppDelegate` tuân theo `NSApplicationDelegate`
 
 ```
 // App/B2BApp.swift — Dòng 66
@@ -351,7 +352,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 ```
 
-** 3: **`**ObservableObject**`** + **`**@Published**`** — Trừu tượng hóa phản ứng UI**
+3: `ObservableObject` + `@Published` — Trừu tượng hóa phản ứng UI
 
 ```
 // Services/APIService.swift — Dòng 21-28
@@ -418,7 +419,7 @@ class SyncManager: ObservableObject {
 }
 ```
 
-**Sơ đồ Singleton:**
+Sơ đồ Singleton:
 ```
   View A ──────────────────────────────────┐
                                            ▼
