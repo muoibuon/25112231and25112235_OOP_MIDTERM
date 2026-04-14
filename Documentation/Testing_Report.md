@@ -63,23 +63,23 @@ Báo cáo này đánh giá toàn diện chất lượng phần mềm **Muoi B2B 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                 PHẠM VI KIỂM THỬ                        │
-│                                                          │
-│  ✅ Trong phạm vi:                                       │
-│     • Quản lý hóa đơn (tạo, sửa, xóa, tìm kiếm)       │
+│                                                         │
+│  Trong phạm vi:                                         │
+│     • Quản lý hóa đơn (tạo, sửa, xóa, tìm kiếm)         │
 │     • Quản lý khách hàng (CRUD)                         │
-│     • Tính toán tài chính (VAT, chiết khấu, tổng)      │
+│     • Tính toán tài chính (VAT, chiết khấu, tổng)       │
 │     • Dashboard thống kê                                │
 │     • Giao diện sáng/tối                                │
 │     • Đa ngôn ngữ Việt/Anh                              │
 │     • Tích hợp API VietQR                               │
 │     • Tích hợp API tỷ giá                               │
 │     • Lưu trữ dữ liệu CoreData                          │
-│                                                          │
-│  ❌ Ngoài phạm vi:                                       │
-│     • Kiểm thử tự động (Unit Test / UI Test chưa có)   │
-│     • Kiểm thử đa người dùng                           │
-│     • Kiểm thử bảo mật chuyên sâu                      │
-│     • Kiểm thử hiệu năng quy mô lớn (>10,000 hóa đơn) │
+│                                                         │
+│  Ngoài phạm vi:                                         │
+│     • Kiểm thử tự động (Unit Test / UI Test chưa có)    │
+│     • Kiểm thử đa người dùng                            │
+│     • Kiểm thử bảo mật chuyên sâu                       │
+│     • Kiểm thử hiệu năng quy mô lớn (>10,000 hóa đơn)   │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -91,48 +91,48 @@ Báo cáo này đánh giá toàn diện chất lượng phần mềm **Muoi B2B 
 
 | ID | Trường Hợp Kiểm Thử | Kết Quả | Ghi Chú |
 |----|---------------------|---------|---------|
-| TC-01 | Tạo hóa đơn mới với đầy đủ thông tin | ✅ PASS | Lưu vào CoreData thành công |
-| TC-02 | Tính VAT 10% tự động | ✅ PASS | Công thức chính xác |
-| TC-03 | Áp dụng chiết khấu | ✅ PASS | subtotal → discount → VAT đúng thứ tự |
-| TC-04 | Hóa đơn tự động đánh dấu quá hạn | ✅ PASS | isOverdue hoạt động |
-| TC-05 | Tìm kiếm hóa đơn theo tên KH | ✅ PASS | |
-| TC-06 | Lọc hóa đơn theo trạng thái | ✅ PASS | |
-| TC-07 | Ghi nhận thanh toán một phần | ✅ PASS | remainingAmount tính đúng |
-| TC-08 | Xóa hóa đơn | ✅ PASS | Xóa khỏi CoreData |
-| TC-09 | Tạo hóa đơn khi chưa chọn khách hàng | ⚠️ WARN | Cần validation rõ hơn |
-| TC-10 | Hóa đơn số âm | ⚠️ WARN | Chưa có validation giới hạn dưới |
+| TC-01 | Tạo hóa đơn mới với đầy đủ thông tin |  PASS | Lưu vào CoreData thành công |
+| TC-02 | Tính VAT 10% tự động |  PASS | Công thức chính xác |
+| TC-03 | Áp dụng chiết khấu |  PASS | subtotal → discount → VAT đúng thứ tự |
+| TC-04 | Hóa đơn tự động đánh dấu quá hạn |  PASS | isOverdue hoạt động |
+| TC-05 | Tìm kiếm hóa đơn theo tên KH |  PASS | |
+| TC-06 | Lọc hóa đơn theo trạng thái |  PASS | |
+| TC-07 | Ghi nhận thanh toán một phần |  PASS | remainingAmount tính đúng |
+| TC-08 | Xóa hóa đơn |  PASS | Xóa khỏi CoreData |
+| TC-09 | Tạo hóa đơn khi chưa chọn khách hàng | WARN | Cần validation rõ hơn |
+| TC-10 | Hóa đơn số âm |  WARN | Chưa có validation giới hạn dưới |
 
 ### 3.2 Module Khách Hàng
 
 | ID | Trường Hợp Kiểm Thử | Kết Quả | Ghi Chú |
 |----|---------------------|---------|---------|
-| TC-11 | Thêm khách hàng mới | ✅ PASS | |
-| TC-12 | Chỉnh sửa thông tin KH | ✅ PASS | |
-| TC-13 | Xóa khách hàng | ✅ PASS | |
-| TC-14 | Kiểm tra hạn mức tín dụng | ✅ PASS | creditAvailable tính đúng |
-| TC-15 | Tìm kiếm khách hàng | ✅ PASS | |
-| TC-16 | Email trùng lặp | ❌ FAIL | Không có validation kiểm tra email trùng |
-| TC-17 | Mã số thuế format | ⚠️ WARN | Không validate format MST Việt Nam |
+| TC-11 | Thêm khách hàng mới |  PASS | |
+| TC-12 | Chỉnh sửa thông tin KH |  PASS | |
+| TC-13 | Xóa khách hàng |  PASS | |
+| TC-14 | Kiểm tra hạn mức tín dụng |  PASS | creditAvailable tính đúng |
+| TC-15 | Tìm kiếm khách hàng |  PASS | |
+| TC-16 | Email trùng lặp |  FAIL | Không có validation kiểm tra email trùng |
+| TC-17 | Mã số thuế format |  WARN | Không validate format MST Việt Nam |
 
 ### 3.3 Module API & VietQR
 
 | ID | Trường Hợp Kiểm Thử | Kết Quả | Ghi Chú |
 |----|---------------------|---------|---------|
-| TC-18 | Tải tỷ giá khi có mạng | ✅ PASS | open.er-api.com hoạt động |
-| TC-19 | Xử lý khi mất mạng | ✅ PASS | Hiển thị thông báo lỗi |
-| TC-20 | Sinh mã QR VietQR | ✅ PASS | img.vietqr.io trả về ảnh PNG |
-| TC-21 | QR với số tiền 0 đồng | ⚠️ WARN | Không block, tạo QR với amount=0 |
-| TC-22 | Danh sách quốc gia | ✅ PASS | Fallback khi lỗi mạng |
+| TC-18 | Tải tỷ giá khi có mạng |  PASS | open.er-api.com hoạt động |
+| TC-19 | Xử lý khi mất mạng |  PASS | Hiển thị thông báo lỗi |
+| TC-20 | Sinh mã QR VietQR |  PASS | img.vietqr.io trả về ảnh PNG |
+| TC-21 | QR với số tiền 0 đồng |  WARN | Không block, tạo QR với amount=0 |
+| TC-22 | Danh sách quốc gia |  PASS | Fallback khi lỗi mạng |
 
 ### 3.4 Module Giao Diện
 
 | ID | Trường Hợp Kiểm Thử | Kết Quả | Ghi Chú |
 |----|---------------------|---------|---------|
-| TC-23 | Chuyển dark/light mode | ✅ PASS | Tức thì, không cần restart |
-| TC-24 | Chuyển ngôn ngữ Việt ↔ Anh | ✅ PASS | LocalizationManager hoạt động |
-| TC-25 | Resize cửa sổ | ✅ PASS | Layout responsive |
-| TC-26 | Phím tắt Cmd+N (hóa đơn mới) | ✅ PASS | |
-| TC-27 | Phím tắt Cmd+, (cài đặt) | ✅ PASS | |
+| TC-23 | Chuyển dark/light mode | PASS | Tức thì, không cần restart |
+| TC-24 | Chuyển ngôn ngữ Việt ↔ Anh | PASS | LocalizationManager hoạt động |
+| TC-25 | Resize cửa sổ |  PASS | Layout responsive |
+| TC-26 | Phím tắt Cmd+N (hóa đơn mới) |  PASS | |
+| TC-27 | Phím tắt Cmd+, (cài đặt) |  PASS | |
 
 **Tổng kết:** 22/27 test PASS (81%) | 1 FAIL | 4 WARN
 
